@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>House Journey</title>
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="shadow">
+      <div class="header_top">
+        <div class="container">
+          <form action="" class="loc_form mr-30">
+            <i class="fa fa-map-marker-alt mr-1"></i>
+            <input type="text" placeholder="Enter your location" value="San Francisco, USA" readonly="" onkeypress="this.style.width = 
+            ((this.value.length + 1) * 7) + 'px';" style="min-width: 133px;">
+            <button class="change">Change</button>
+            <button class="explore" style="display: none;">Explore</button>
+          </form>
+          <div class="dropdown my_acc">
+            <a id="my_acc_drop" class="dropdown-toggle" href="#" role="button" aria-expanded="false">My Account</a>
+            <div class="dropdown-menu" aria-labelledby="my_acc_drop" style="min-width: 10rem;">
+              <a class="dropdown-item" href=""><i class="bi bi-person"></i> SignIn</a>
+              <a class="dropdown-item" href=""><i class="bi bi-box-arrow-in-right"></i> Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="navbar navbar-expand-lg navbar-end navbar-light">
+        <div class="container">
+          <nav class="navbar-nav-wrap">
+            <!-- Default Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/img/logo.png" alt="">
+            </a>
+            <!-- End Default Logo -->
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-default">
+                <i class="bi-list"></i>
+              </span>
+              <span class="navbar-toggler-toggled">
+                <i class="bi-x"></i>
+              </span>
+            </button>
+            <!-- End Toggler -->
+        
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <div class="navbar-absolute-top-scroller">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="service_prov" class="nav-link dropdown-toggle active" href="#" role="button" aria-expanded="false">Service Providers</a>
+                    <!-- Mega Menu -->
+                    <div class="dropdown-menu" aria-labelledby="service_prov" style="min-width: 12rem;">
+                      <a class="dropdown-item" href="">Dealer</a>
+                      <a class="dropdown-item" href="">Home Builder</a>
+                      <a class="dropdown-item" href="">Contractors</a>
+                    </div>
+                    <!-- End Mega Menu -->
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Write a Review</a>   
+                  </li>        
+                </ul>
+              </div>
+            </div>
+            <!-- End Collapse -->
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="py-4">
+        <div class="container">
+            <form class="mb-4 page_search_widget">
+                <div class="input-card input-card-sm bg-light shadow-none">
+                    <div class="input-card-form">
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-prepend input-group-text">
+                                <i class="bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-lg" id="" placeholder="Search for dealers, home builders, contractors" aria-label="Your name" aria-describedby="heroNameAddOn">
+                        </div>
+                    </div>
+                    <div class="input-card-form">
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-prepend input-group-text">
+                                <i class="bi-geo-alt"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-lg" id="emailRegisterForm" placeholder="Enter your / nearby location" aria-label="Your email">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg" id="heroNameAddOn">Search</button>
+                </div>
+            </form>
+            <div class="page_title mb-4">
+                <ul class="breadcrumb mb-1">
+                    <li>
+                        <a href="" class="breadcrumb-item">San Francisco</a>
+                        <i class="bi-chevron-right small mx-1"></i>
+                    </li>
+                    <li>
+                        <a href="" class="breadcrumb-item">Home Services</a>
+                        <i class="bi-chevron-right small mx-1"></i>
+                    </li>
+                    <li>
+                        <span class="breadcrumb-item">Construction</span>
+                    </li>
+                </ul>
+                <h3>Best construction in San Francisco, CA</h3>
+            </div>
+            <div id="map" class="mb-5"></div>            
+            <div class="listing_top">
+                <div class="listing_filter_top mb-0">
+                    <a href="#filterSidebar" class="filter_action" data-bs-toggle="offcanvas" aria-controls="filterSidebar">
+                        <i class="bi-filter"></i>
+                        All
+                    </a>
+                    <a href="" class="filter_action">
+                        Open Now
+                    </a>
+                    <a href="" class="filter_action">
+                        Request a quote
+                    </a>
+                </div>
+                <div class="sort">
+                    <select name="" id="" class="select2">
+                        <option>Recommended</option>
+                        <option>Highest Rated</option>
+                        <option>Most Reviewed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="product_card list p-3 shadow" id="card_1">
+                        <!-- Slider main wrapper -->
+                        <div class="swiper-container-wrapper">
+                            <!-- Slider main container -->
+                            <div class="swiper-container gallery-top gallery_top_0">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <!-- Slider thumbnail container -->
+                            <div class="swiper-container gallery-thumbs gallery_thumbs_0">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title">ABC Enterprise</a>
+                            <div class="rating">
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-half"></i>
+                                <a href="" class="reviews">23 Reviews</a>
+                            </div>
+                            <div class="oth_info">
+                                <span class="lic">
+                                    <i class="bi-shield-check"></i>
+                                    Verified License . Contractors
+                                </span>
+                                <span class="year_exp">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                    12 years in business
+                                </span>
+                                <span class="local_oper">
+                                    <i class="bi bi-geo"></i>
+                                    Locally owned & operated
+                                </span>
+                            </div>
+                            <p>
+                                “I’m a licensed general contractor who combines complete home renovations , interior design and smart houses for residential properties only . Large home additions and interior…”
+                                <a href="" class="view_more">Read More</a>
+                            </p>
+                            <div class="enq_sec">
+                                <a href="" class="btn btn-primary consult_btn">
+                                    <i class="bi-chat-right-dots me-2"></i> Request a Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product_card list p-3 shadow" id="card_2">
+                        <!-- Slider main wrapper -->
+                        <div class="swiper-container-wrapper">
+                            <!-- Slider main container -->
+                            <div class="swiper-container gallery-top gallery_top_1">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <!-- Slider thumbnail container -->
+                            <div class="swiper-container gallery-thumbs gallery_thumbs_1">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title">Home Builders Inc</a>
+                            <div class="rating">
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-half"></i>
+                                <a href="" class="reviews">23 Reviews</a>
+                            </div>
+                            <div class="oth_info">
+                                <span class="lic">
+                                    <i class="bi-shield-check"></i>
+                                    Verified License . Contractors
+                                </span>
+                                <span class="year_exp">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                    12 years in business
+                                </span>
+                                <span class="local_oper">
+                                    <i class="bi bi-geo"></i>
+                                    Locally owned & operated
+                                </span>
+                            </div>
+                            <p>
+                                “I’m a licensed general contractor who combines complete home renovations , interior design and smart houses for residential properties only . Large home additions and interior…”
+                                <a href="" class="view_more">Read More</a>
+                            </p>
+                            <div class="enq_sec">
+                                <a href="" class="btn btn-primary consult_btn">
+                                    <i class="bi-chat-right-dots me-2"></i> Request a Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product_card list p-3 shadow" id="card_3">
+                        <!-- Slider main wrapper -->
+                        <div class="swiper-container-wrapper">
+                            <!-- Slider main container -->
+                            <div class="swiper-container gallery-top gallery_top_2">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <!-- Slider thumbnail container -->
+                            <div class="swiper-container gallery-thumbs gallery_thumbs_2">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title">Sudeep Constructions</a>
+                            <div class="rating">
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-half"></i>
+                                <a href="" class="reviews">23 Reviews</a>
+                            </div>
+                            <div class="oth_info">
+                                <span class="lic">
+                                    <i class="bi-shield-check"></i>
+                                    Verified License . Contractors
+                                </span>
+                                <span class="year_exp">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                    12 years in business
+                                </span>
+                                <span class="local_oper">
+                                    <i class="bi bi-geo"></i>
+                                    Locally owned & operated
+                                </span>
+                            </div>
+                            <p>
+                                “I’m a licensed general contractor who combines complete home renovations , interior design and smart houses for residential properties only . Large home additions and interior…”
+                                <a href="" class="view_more">Read More</a>
+                            </p>
+                            <div class="enq_sec">
+                                <a href="" class="btn btn-primary consult_btn">
+                                    <i class="bi-chat-right-dots me-2"></i> Request a Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product_card list p-3 shadow" id="card_4">
+                        <!-- Slider main wrapper -->
+                        <div class="swiper-container-wrapper">
+                            <!-- Slider main container -->
+                            <div class="swiper-container gallery-top gallery_top_3">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <!-- Slider thumbnail container -->
+                            <div class="swiper-container gallery-thumbs gallery_thumbs_3">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/a-sIZrNTWSj7cvpCPc1s6g/258s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/ehTjuOIYt9G3VbjW0aaqHw/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/85JJL6mWU7jkmJAmM4mJyg/168s.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://s3-media0.fl.yelpcdn.com/projectphoto/eiGuD3SQ5CR_NHKvr4FIfQ/168s.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title">Indi Home Company</a>
+                            <div class="rating">
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-fill"></i>
+                                <i class="bi-star-half"></i>
+                                <a href="" class="reviews">23 Reviews</a>
+                            </div>
+                            <div class="oth_info">
+                                <span class="lic">
+                                    <i class="bi-shield-check"></i>
+                                    Verified License . Contractors
+                                </span>
+                                <span class="year_exp">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                    12 years in business
+                                </span>
+                                <span class="local_oper">
+                                    <i class="bi bi-geo"></i>
+                                    Locally owned & operated
+                                </span>
+                            </div>
+                            <p>
+                                “I’m a licensed general contractor who combines complete home renovations , interior design and smart houses for residential properties only . Large home additions and interior…”
+                                <a href="" class="view_more">Read More</a>
+                            </p>
+                            <div class="enq_sec">
+                                <a href="" class="btn btn-primary consult_btn">
+                                    <i class="bi-chat-right-dots me-2"></i> Request a Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="filterSidebar" aria-labelledby="filterSidebarExampleLabel">
+            <div class="offcanvas-body p-0">
+                <div class="sidebar_filter bg-white p-4">
+                    <div class="filter_widget">
+                        <h5 class="filter_title">Suggested</h5>
+                        <label class="control control--checkbox">
+                        	Open Now 10:16 PM
+                            <input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Request a Quote
+                        	<input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="filter_widget">
+                        <h5 class="filter_title">Features</h5>
+                        <label class="control control--checkbox">
+                        	Offering a Deal
+                            <input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Open to All
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Offers Military Discount
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Accepts Cryptocurrency
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <a href="" class="see_all">See All</a>
+                    </div>
+                    <div class="filter_widget">
+                        <h5 class="filter_title">Neighborhoods</h5>
+                        <label class="control control--checkbox">
+                        	Alamo Square
+                            <input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Anza Vista
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Ashbury Heights
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">
+                        	Balboa Terrace
+                        	<input type="checkbox"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <a href="" class="see_all">See All</a>
+                    </div>
+                    <div class="filter_widget">
+                        <h5 class="filter_title">Distance</h5>
+                        <label class="control control--radio">
+                        	Bird's-eye View
+                            <input type="radio" name="radio" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">
+                        	Driving (5 mi.)
+                            <input type="radio" name="radio" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">
+                        	Biking (2 mi.)
+                            <input type="radio" name="radio2" disabled="disabled" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">
+                        	Walking (1 mi.)
+                            <input type="radio" name="radio2" disabled="disabled" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">
+                        	Within 4 blocks
+                            <input type="radio" name="radio2" disabled="disabled" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <footer>
+        © 2022, <a href="">BimaBarracks</a> | All Rights Reserved
+    </footer>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- JS Implementing Plugins -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    var icons = { parking: { icon: 'https://tarantelleromane.files.wordpress.com/2016/10/map-marker.png?w=50' } };
+
+
+    // REPLACE WITH DATA FROM API
+    //TITLE | POSITION - LAT , LNG | ICON | TITLE | CONTENT
+    var data = [{
+            title: 'ABC Enterprise',
+            position: {
+                lat: 53.3588026,
+                lng: -2.274919
+            },
+            icon: 'parking',
+            content: '<div class="map_popover shadow"><div id="siteNotice"></div><img src="https://images.unsplash.com/uploads/14123892966835548e7bd/14369636?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt=""><h5 class="title">ABC Enterprise</h5><div class="popover_service">Contractors, Roofing, Painters</div><div class="rating"><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-half"></i></div><a href="#card_1" class="map_view_btn btn btn-sm btn-primary">VIEW</a></div>'
+        },
+        {
+            title: 'Sudeep Constructions',
+            position: {
+                lat: 53.8679434,
+                lng: -1.6637193
+            },
+            icon: 'parking',
+            content: '<div class="map_popover shadow"><div id="siteNotice"></div><img src="https://images.unsplash.com/uploads/14123892966835548e7bd/14369636?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt=""><h5 class="title">Sudeep Constructions</h5><div class="popover_service">Contractors, Roofing, Painters</div><div class="rating"><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-half"></i></div><a href="#card_2" class="map_view_btn btn btn-sm btn-primary">VIEW</a></div>'
+        },
+        {
+            title: 'Home Builders Inc',
+            position: {
+                lat: 54.661781,
+                lng: -6.2184331
+            },
+            icon: 'parking',
+            content: '<div class="map_popover shadow"><div id="siteNotice"></div><img src="https://images.unsplash.com/uploads/14123892966835548e7bd/14369636?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt=""><h5 class="title">Home Builders Inc</h5><div class="popover_service">Contractors, Roofing, Painters</div><div class="rating"><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-half"></i></div><a href="#card_3" class="map_view_btn btn btn-sm btn-primary">VIEW</a></div>'
+        },
+        {
+            title: 'Indi Home Company',
+            position: {
+                lat: 55.950785,
+                lng: -3.3636419
+            },
+            icon: 'parking',
+            content: '<div class="map_popover shadow"><div id="siteNotice"></div><img src="https://images.unsplash.com/uploads/14123892966835548e7bd/14369636?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt=""><h5 class="title">Indi Home Company</h5><div class="popover_service">Contractors, Roofing, Painters</div><div class="rating"><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-fill"></i><i class="bi-star-half"></i></div><a href="#card_4" class="map_view_btn btn btn-sm btn-primary">VIEW</a></div>'
+        }
+    ];
+
+    function initMap() {
+        var uk = {
+            lat: 53.990221,
+            lng: -3.911132
+        };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: uk,
+            disableDefaultUI: true,
+            styles: [{ "elementType": "labels", "stylers": [{ "visibility": "off" }, { "color": "#f49f53" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f9ddc5" }, { "lightness": -7 }] }, { "featureType": "road", "stylers": [{ "color": "#813033" }, { "lightness": 43 }] }, { "featureType": "poi.business", "stylers": [{ "color": "#645c20" }, { "lightness": 38 }] }, { "featureType": "water", "stylers": [{ "color": "#1994bf" }, { "saturation": -69 }, { "gamma": 0.99 }, { "lightness": 43 }] }, { "featureType": "road.local", "elementType": "geometry.fill", "stylers": [{ "color": "#f19f53" }, { "weight": 1.3 }, { "visibility": "on" }, { "lightness": 16 }] }, { "featureType": "poi.business" }, { "featureType": "poi.park", "stylers": [{ "color": "#645c20" }, { "lightness": 39 }] }, { "featureType": "poi.school", "stylers": [{ "color": "#a95521" }, { "lightness": 35 }] }, {}, { "featureType": "poi.medical", "elementType": "geometry.fill", "stylers": [{ "color": "#813033" }, { "lightness": 38 }, { "visibility": "off" }] }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, { "elementType": "labels" }, { "featureType": "poi.sports_complex", "stylers": [{ "color": "#9e5916" }, { "lightness": 32 }] }, {}, { "featureType": "poi.government", "stylers": [{ "color": "#9e5916" }, { "lightness": 46 }] }, { "featureType": "transit.station", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "stylers": [{ "color": "#813033" }, { "lightness": 22 }] }, { "featureType": "transit", "stylers": [{ "lightness": 38 }] }, { "featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{ "color": "#f19f53" }, { "lightness": -10 }] }, {}, {}, {}]
+        });
+
+        var InfoWindows = new google.maps.InfoWindow({});
+
+        data.forEach(function(airport) {
+            var marker = new google.maps.Marker({
+                position: { lat: airport.position.lat, lng: airport.position.lng },
+                map: map,
+                icon: icons[airport.icon].icon,
+                title: airport.title
+            });
+            marker.addListener('mouseover', function() {
+                InfoWindows.open(map, this);
+                InfoWindows.setContent(airport.content);
+            });
+        });
+    }
+    </script>
+    <!-- SLIDER JS HERE -->
+    <script>
+    $('.gallery-thumbs').each(function(i) {
+        var galleryThumbs = new Swiper(".gallery_thumbs_" + i, {
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            direction: "horizontal",
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: false,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            watchOverflow: true,
+            autoplay: false,
+            breakpoints: {
+                480: {
+                    direction: "vertical",
+                    slidesPerView: 3
+                }
+            }
+        });
+        var galleryTop = new Swiper(".gallery_top_" + i, {
+            direction: "horizontal",
+            spaceBetween: 0,
+            autoplay: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            }
+        });
+    })
+
+    $('.select2').select2({
+        minimumResultsForSearch: -1
+    });
+
+    $('.map_view_btn').click(function(){
+    	alert('aaa')
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>House Journey</title>
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="shadow">
+      <div class="header_top">
+        <div class="container">
+          <form action="" class="loc_form mr-30">
+            <i class="fa fa-map-marker-alt mr-1"></i>
+            <input type="text" placeholder="Enter your location" value="San Francisco, USA" readonly="" onkeypress="this.style.width = 
+            ((this.value.length + 1) * 7) + 'px';" style="min-width: 133px;">
+            <button class="change">Change</button>
+            <button class="explore" style="display: none;">Explore</button>
+          </form>
+          <div class="dropdown my_acc">
+            <a id="my_acc_drop" class="dropdown-toggle" href="#" role="button" aria-expanded="false">My Account</a>
+            <div class="dropdown-menu" aria-labelledby="my_acc_drop" style="min-width: 10rem;">
+              <a class="dropdown-item" href=""><i class="bi bi-person"></i> SignIn</a>
+              <a class="dropdown-item" href=""><i class="bi bi-box-arrow-in-right"></i> Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header" class="navbar navbar-expand-lg navbar-end navbar-light">
+        <div class="container">
+          <nav class="navbar-nav-wrap">
+            <!-- Default Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/img/logo.png" alt="">
+            </a>
+            <!-- End Default Logo -->
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-default">
+                <i class="bi-list"></i>
+              </span>
+              <span class="navbar-toggler-toggled">
+                <i class="bi-x"></i>
+              </span>
+            </button>
+            <!-- End Toggler -->
+        
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <div class="navbar-absolute-top-scroller">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="service_prov" class="nav-link dropdown-toggle active" href="#" role="button" aria-expanded="false">Service Providers</a>
+                    <!-- Mega Menu -->
+                    <div class="dropdown-menu" aria-labelledby="service_prov" style="min-width: 12rem;">
+                      <a class="dropdown-item" href="">Dealer</a>
+                      <a class="dropdown-item" href="">Home Builder</a>
+                      <a class="dropdown-item" href="">Contractors</a>
+                    </div>
+                    <!-- End Mega Menu -->
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Write a Review</a>   
+                  </li>        
+                </ul>
+              </div>
+            </div>
+            <!-- End Collapse -->
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="dtls_main_info">
+                        <ul class="breadcrumb mb-1">
+                            <li>
+                                <a href="" class="breadcrumb-item">San Francisco</a>
+                                <i class="bi-chevron-right small mx-1"></i>
+                            </li>
+                            <li>
+                                <a href="" class="breadcrumb-item">Home Services</a>
+                                <i class="bi-chevron-right small mx-1"></i>
+                            </li>
+                            <li>
+                                <span class="breadcrumb-item">Construction</span>
+                            </li>
+                        </ul>
+                        <h2>ABC Enterprise</h2>
+                        <div class="rating lg">
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-half"></i>
+                            <a href="" class="reviews ms-2">23 Reviews</a>
+                        </div>
+                        <div class="oth">
+                            <span class="verified">
+                                <i class="bi-check-circle-fill"></i> Verified
+                            </span>
+                            <span class="shield">
+                                <i class="bi-shield-fill-check"></i> Trusted
+                            </span>
+                        </div>
+                        <div class="open_hr">
+                            <span>Closed</span> 9:00 AM - 5:00 PM
+                        </div>
+                        <div class="dtls_btns">
+                            <a href="" class="white_review">
+                                <i class="bi-star"></i>
+                                Write a Review
+                            </a>
+                            <a href="" class="add_photo light_border_btn">
+                                <i class="bi-camera"></i>
+                                Add Photo
+                            </a>
+                            <a href="" class="share light_border_btn">
+                                <i class="bi-share"></i>
+                                Share
+                            </a>
+                            <a href="" class="fav light_border_btn">
+                                <i class="bi bi-heart"></i>
+                                Favorite
+                            </a>
+                        </div>
+                        <div class="verified_sec bg-soft-info p-3">
+                            <div class="align-items-center row">
+                                <img src="assets/img/verified.png" alt="" class="icon">
+                                <div class="col-auto">
+                                    <div class="info">
+                                        <h5>Verified License</h5>
+                                        <p class="desc">BimaBarracks confirmed a business or employee license.</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto ms-auto">
+                                    <a href="" class="btn btn-primary btn-sm">
+                                        license information
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dtls_gall">
+                            <h5 class="mb-3 sec_title">Portfolio</h5>
+                            <div class="swiper-container-wrapper">
+                                <!-- Slider main container -->
+                                <div class="swiper-container gallery-top gallery_top_0" id="lightgallery">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <a data-fancybox="gallery" href="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt="">
+                                        </a>
+                                        <a data-fancybox="gallery" href="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" alt="">
+                                        </a>
+                                        <a data-fancybox="gallery" href="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871" class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871" alt="">
+                                        </a>
+                                        <a data-fancybox="gallery" href="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797" class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797" alt="">
+                                        </a>
+                                        <a data-fancybox="gallery" href="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" alt="">
+                                        </a>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <!-- Slider thumbnail container -->
+                                <div class="swiper-container gallery-thumbs gallery_thumbs_0">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=837" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="highlight mt_30">
+                            <h5 class="mb-3 sec_title">Highlights from the Business</h5>
+                            <div class="highlight_row">
+                                <div class="highlight_item">
+                                    <i class="bi bi-bank"></i>
+                                    <p>12 year in business</p>
+                                </div>
+                                <div class="highlight_item">
+                                    <i class="bi bi-balloon-heart"></i>
+                                    <p>Locally owned & operated</p>
+                                </div>
+                                <div class="highlight_item">
+                                    <i class="bi bi-binoculars"></i>
+                                    <p>Family owned & operated </p>
+                                </div>
+                                <div class="highlight_item">
+                                    <i class="bi bi-box"></i>
+                                    <p>Available by appointment</p>
+                                </div>
+                                <div class="highlight_item">
+                                    <i class="bi bi-bullseye"></i>
+                                    <p>Free estimates</p>
+                                </div>
+                                <div class="highlight_item">
+                                    <i class="bi bi-camera"></i>
+                                    <p>Free consultation</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dtls_about mt_30">
+                            <h5 class="sec_title">About the Business</h5>
+                            <div class="short_desc">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <div class="long_desc" style="display: none">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <a href class="btn-link link-primary dtls_readmore" data-show="short">Read More</a>
+                        </div> 
+                        <div class="services mt_30">
+                            <h5 class="mb-3 sec_title">Services We Offer</h5>
+                            <div class="row g-1">
+                                <div class="col-6">
+                                    <span class="service_item">General Contracting</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Bathroom Remodeling</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Concrete & Masonry</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Door Services</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Electrical Services</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Home Building</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Room Additions</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Waterproofing</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Kitchen Remodeling in 1 review</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Carpentry</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Decks & Railing</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Earthquake Retrofit</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Flooring</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Home Remodeling</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Siding</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="service_item">Windows Services</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo_video mt_30">
+                            <h5 class="mb-3 sec_title">Photos and Videos</h5>
+                            <div class="owl-carousel p_v_s">
+                                <div class="p_v_s_g_i">
+                                    <a href="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                                <div class="p_v_s_g_i">
+                                    <a href="https://www.youtube.com/watch?v=z4nO6NuEM3A" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <span class="play_btn"><span class="bi-play"></span></span>
+                                        <img src="https://images.unsplash.com/photo-1627660080110-20045fd3875d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                                <div class="p_v_s_g_i">
+                                    <a href="https://images.unsplash.com/photo-1498631906572-66c58d46ecf7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=983" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <img src="https://images.unsplash.com/photo-1498631906572-66c58d46ecf7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=983" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                                <div class="p_v_s_g_i">
+                                    <a href="https://www.youtube.com/watch?v=z4nO6NuEM3A" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <span class="play_btn"><span class="bi-play"></span></span>
+                                        <img src="https://images.unsplash.com/photo-1553946550-4b8f3eea5451?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                                <div class="p_v_s_g_i">
+                                    <a href="https://images.unsplash.com/photo-1581094480465-4e6c25fb4a52?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <img src="https://images.unsplash.com/photo-1581094480465-4e6c25fb4a52?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                                <div class="p_v_s_g_i">
+                                    <a href="https://www.youtube.com/watch?v=z4nO6NuEM3A" data-fancybox="p_v_s_g_i_g" class="p_v_s_g_i_g">
+                                        <span class="play_btn"><span class="bi-play"></span></span>
+                                        <img src="https://images.unsplash.com/photo-1583024011792-b165975b52f5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032" alt="" class="p_v_s_g_i_g_i">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews mt_30">
+                            <h5 class="mb-3 sec_title">People Say About Us</h5>
+                            <div class="review_group">
+                                <div class="review_item">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                                <div class="review_item">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                                <div class="review_item">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                                <div class="review_item" style="display:none;">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                                <div class="review_item" style="display:none;">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                                <div class="review_item" style="display:none;">
+                                    <div class="user_info">
+                                        <div class="img">
+                                            <img src="assets/img/avter.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="nm">Jhon Doe</span>
+                                            <div class="rating sm">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a href="" class="btn btn-primary btn-sm px-4 revLoadMore">Load More</a>
+                            </div>
+                        </div>
+                        <div class="also_link mt_30">
+                            <h5 class="mb-3 sec_title">You May Also Like</h5>
+                            <div class="owl-carousel y_m_a_l_s">
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Home Builders Inc</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Sudeep Constructions</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1601628828688-632f38a5a7d0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=709" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Indi Home Company</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Home Builders Inc</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Sudeep Constructions</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                                <a href="" class="y_m_a_l_s_i">
+                                    <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774" alt="">
+                                    <div class="y_m_a_l_s_i_i">
+                                        <h5>Indi Home Company</h5>
+                                        <div class="rating sm">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-half"></i>
+                                            <span class="reviews ms-2">23</span>
+                                        </div>
+                                        <p class="cat">Landscaping, Irrigation, Contractors</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sidebar">
+                        <div class="add_info">
+                            <div class="add_info_item">
+                                <i class="bi bi-envelope"></i>
+                                <a href="">example@email.com</a>
+                            </div>
+                            <div class="add_info_item">
+                                <i class="bi bi-telephone"></i>
+                                <a href="">(628) 900-9820</a>
+                            </div>
+                            <div class="add_info_item">
+                                <i class="bi bi-globe"></i>
+                                <a href="">www.google.com</a>
+                            </div>
+                        </div>
+                        <div class="loct_hours mt-3">
+                            <h5 class="sec_title">Location & Hours</h5>
+                            <img src="https://maps.googleapis.com/maps/api/staticmap?size=315x150&sensor=false&client=gme-yelp&language=en&scale=1&path=color%3A0x0947a766%7Cweight%3A0%7Cfillcolor%3A0x0947a766%7C37.824972%2C-122.647247%7C37.693601%2C-122.521591%7C37.693601%2C-122.316971%7C37.856423%2C-122.316971%7C37.955027%2C-122.354050%7C37.987504%2C-122.442627%7C37.987504%2C-122.647247%7C37.824972%2C-122.647247&markers=scale%3A1%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_32x43.png%7C37.737970%2C-122.403206&signature=YWKEUBpEvmR659gCaAzfLfaA_vM=" alt="">
+                            <div class="address">
+                                <a href="">2261 Shafter Ave</a> <br>
+                                San Francisco, CA 94124
+                                Elmira St & I-280
+                                Bayview-Hunters Point <br>
+                                Serving Mill Valley, CA Area
+                            </div>
+                            <div class="time_table">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mon</td>
+                                            <td>9:00 AM - 5:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tue</td>
+                                            <td>9:00 AM - 5:00 PM <span class="text-primary close">Closed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wed</td>
+                                            <td>9:00 AM - 5:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thu</td>
+                                            <td>9:00 AM - 5:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fri</td>
+                                            <td>9:00 AM - 5:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sat</td>
+                                            <td>Closed</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sun</td>
+                                            <td>Closed</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <a href="" class="btn btn-primary btn-block w-100 mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Request a Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header p-md-5 pb-md-0">
+                        <div></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      
+                        <div class="modal-body pb-0">   
+                            <form action="" class=" ">                     
+                                <div class="step_form px-md-5">
+                                    <div class="f_step active">
+                                        <div class="f_step_i">
+                                            <h5 class="qus mb-4">What kind of contracting services do you need?</h5>
+                                            <div class="f_step_i_q">
+                                                <label class="control control--radio mb-2">
+                                                    Additions to an existing structure
+                                                    <input type="radio" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--radio mb-2">
+                                                    Construction design services
+                                                    <input type="radio" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--radio mb-2">
+                                                    New structure construction
+                                                    <input type="radio" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--radio mb-2">
+                                                    Remodeling
+                                                    <input type="radio" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--radio mb-2">
+                                                    Structural repair
+                                                    <input type="radio" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f_step">
+                                        <div class="f_step_i">
+                                            <h5 class="qus mb-4">How many stories do you need to add to your building?</h5>
+                                            <div class="f_step_i_q">
+                                                <label class="control control--checkbox mb-2">
+                                                    Additions to an existing structure
+                                                    <input type="checkbox" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox mb-2">
+                                                    Construction design services
+                                                    <input type="checkbox" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox mb-2">
+                                                    New structure construction
+                                                    <input type="checkbox" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox mb-2">
+                                                    Remodeling
+                                                    <input type="checkbox" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox mb-2">
+                                                    Structural repair
+                                                    <input type="checkbox" name="radio">
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f_step">
+                                        <div class="f_step_i">
+                                            <h5 class="qus mb-4">Are there any other details you'd like to share?</h5>
+                                            <div class="f_step_i_q">
+                                                <textarea name="" id="" placeholder="Enter Here." style="height:150px" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-1 d-flex justify-content-end modal-footer py-5 mt-5">
+                                    <button type="button" disabled="disabled" class="btn btn-outline-light text-body px-4 me-5 f_step_back"><i class="bi bi-arrow-left me-2"></i> Back</button>
+                                    <button type="button" disabled="disabled" class="btn btn-primary px-4 f_step_next">Next <i class="bi bi-arrow-right ms-2"></i></button>
+                                    <button type="submit" class="btn btn-primary px-4 f_step_submit" style="display: none">Submit <i class="bi bi-arrow-right ms-2"></i></button>
+                                </div>    
+                            </form>                    
+                        </div>                        
+                    </div>
+                  </div>
+                </div>
+            </div>  
+        </div>
+    </main>
+
+    
+
+    <footer>
+        © 2022, <a href="">BimaBarracks</a> | All Rights Reserved
+    </footer>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- JS Implementing Plugins -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        var galleryThumbs = new Swiper(".gallery_thumbs_0", {
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            direction: "horizontal",
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: false,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            watchOverflow: true,
+            autoplay: false,
+            breakpoints: {
+                480: {
+                    direction: "vertical",
+                    slidesPerView: 3
+                }
+            }
+        });
+        var galleryTop = new Swiper(".gallery_top_0", {
+            direction: "horizontal",
+            spaceBetween: 0,
+            autoplay: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            }
+        });
+        $('.dtls_readmore').click(function(e){
+            e.preventDefault();
+            if ($(this).attr('data-show') == 'short') {
+                $(this).attr('data-show', 'long')
+                $('.short_desc').hide()
+                $('.long_desc').show()
+                $(this).text('Read Less')
+            } else {
+                $(this).attr('data-show', 'short')
+                $('.short_desc').show()
+                $('.long_desc').hide()
+                $(this).text('Read More')
+            }
+        })
+        $(".p_v_s").owlCarousel({
+            items: 4,
+            nav: true,
+            dots: false,
+            margin: 10,
+        });
+        $('.y_m_a_l_s').owlCarousel({
+            items: 4,
+            nav: true,
+            dots: false,
+            margin: 10,
+        });
+
+        var ReviewGroup = function () {
+            var moreVal = $('.review_group').attr('date-more');
+            var revItem = $('.review_item');
+            revItem.show()
+
+        }
+        $('.revLoadMore').click(function(e){
+            e.preventDefault();
+            ReviewGroup();
+        })
+
+
+
+        var stepState = 0;
+        $('.f_step_next').click(function(e){
+            e.preventDefault()   
+            $('.f_step').eq(stepState).removeClass('active')
+            stepState = stepState+1
+            $('.f_step').eq(stepState).addClass('active')
+            $(this).attr('disabled', 'disabled')
+            $('.f_step_back').removeAttr('disabled')
+
+            if (stepState == $('.f_step').length-1) {
+                $('.f_step_submit').show()
+                $('.f_step_next').hide()
+            } else {
+                $('.f_step_submit').hide()
+                $('.f_step_next').show()     
+            }
+        })
+        $('.f_step_back').click(function(e){
+            e.preventDefault()
+            $('.f_step').eq(stepState).removeClass('active')
+            stepState = stepState-1     
+            $('.f_step').eq(stepState).addClass('active')
+            if ($('.f_step input').is(':checked')) {
+                $('.f_step_next').removeAttr('disabled')
+            }
+            if (stepState == 0) {
+                $('.f_step_back').attr('disabled', 'disabled')
+            }
+        })
+        $('.f_step input').change(function(){
+            var type = $(this).attr('type');            
+            if (type == 'checkbox') {                
+                if ($('.f_step.active input:checked').length == 0) {
+                    $('.f_step_next').attr('disabled', 'disabled')
+                } else {
+                    $('.f_step_next').removeAttr('disabled')
+                }
+            } else {
+                $('.f_step_next').removeAttr('disabled')
+            }
+            
+        })
+        $('.f_step textarea').change(function(){
+            if ($(this).val().length > 0) {
+                $('.f_step_next').removeAttr('disabled')
+            } else {
+                $('.f_step_next').attr('disabled', 'disabled')
+            }
+        })
+    </script>
+</body>
+
+</html>
